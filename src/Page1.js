@@ -1,15 +1,17 @@
 
 import logo from './logo.svg';
-import { AddData } from './components/AddData';
-import { Modal } from 'react-modal';
-
-import Button from '@mui/material';
-import Box from '@mui/material';
-import Typography from '@mui/material';
-import { AddPerson } from './components/AddPerson';
-
+import React, { useState } from 'react';
+import AddPerson from './components/AddPerson';
+import DataTable from './components/Table';
+import { array } from './data/UserData';
 
 export const PageComponents1 = () => {
+    
+    const[dataArray, setDataArray] = useState(array);
+
+    const handleAddArray = (newEntry) => {
+        setDataArray([...dataArray, newEntry]);
+    }
 
     return (
         <div>
@@ -21,18 +23,15 @@ export const PageComponents1 = () => {
                         style={{width: 150, height: 150}} />
                     </div>
                     <div>
-                       <AddPerson></AddPerson>
+                       <AddPerson onAddEntry={handleAddArray}></AddPerson>
                     </div>
-                    
-                    {/* <button class="btn btn-sm" onClick={null}>Add</button>
-                    <button class="btn btn-sm" onClick={null}>Update</button>
-                    <button class="btn btn-sm" onClick={null}>Delete</button>
-                 */}
+            
+                    {/* <button class="btn btn-sm" onClick={null}>Delete</button> */}
                 </ul>
   
                 <div className="rightNav">
                     <input type="text" name="search" id="search" />
-                    <button class="btn btn-sm">Search ID</button>
+                    <button className="btn btn-sm">Search ID</button>
                 </div>
             </nav>
   
@@ -48,8 +47,8 @@ export const PageComponents1 = () => {
             </section>
             
             <section className="section">
+                <DataTable array={dataArray}></DataTable>
                 
-                <AddData></AddData>
             </section>
             
             <p className='text-big'></p>
