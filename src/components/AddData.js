@@ -1,10 +1,12 @@
 import React from 'react';
 import { useState,useRef } from 'react';
-import { userDataArray } from '../userData';
+import { array } from '../data/UserData';
+
+
 
 export const AddData =() => {
 
-  const [userDataArray ,setarray] = useState([])
+  const [dataArray ,setArray] = useState(array)
 
   const [userId, setUserId] = useState('')
   const [name , setName] = useState('')
@@ -36,17 +38,17 @@ export const AddData =() => {
             onChange={(e)=>setOccupation(e.target.value)}
             placeholder="Enter occupation"
             />
-          <button
+          <div className='first'>
+            <button
             className='btn btn-sm'
             type="submit"
            
             onClick={e => {
                 e.preventDefault();
             
-                setarray(userDataArray=>[...userDataArray,{userId:userId, name:name, occupation:occupation}])
-                console.log(userDataArray)
+                setArray(dataArray=>[...array,{userId:userId, name:name, occupation:occupation}])
             }}
-          >add</button>
+          >add</button></div>
           </form>
           <table className="table table-dark table-striped table-bordered">
             <thead>
@@ -58,7 +60,7 @@ export const AddData =() => {
               </tr>
             </thead>
             <tbody>
-              {userDataArray.map((numList) => (
+              {dataArray.map((numList) => (
                 <tr>
                 <td>{numList['userId']}</td>
                 <td>{numList['name']}</td>
