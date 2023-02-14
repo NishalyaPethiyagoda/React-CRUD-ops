@@ -1,5 +1,5 @@
 import React from 'react';
-import { useState,useRef } from 'react';
+import { useState, useRef } from 'react';
 import { array } from '../data/UserData';
 
 
@@ -50,7 +50,11 @@ export const AddData =() => {
             }}
           >add</button></div>
           </form>
-          <table className="table table-dark table-striped table-bordered">
+
+
+
+
+          <table >
             <thead>
               <tr>
                 <th > Id</th>

@@ -1,8 +1,16 @@
-import React from 'react';
+
 import logo from './logo.svg';
 import { AddData } from './components/AddData';
+import { Modal } from 'react-modal';
+
+import Button from '@mui/material';
+import Box from '@mui/material';
+import Typography from '@mui/material';
+import { AddPerson } from './components/AddPerson';
+
 
 export const PageComponents1 = () => {
+
     return (
         <div>
             <nav className="navbar background">
@@ -12,11 +20,14 @@ export const PageComponents1 = () => {
                         src={logo} alt="logo" 
                         style={{width: 150, height: 150}} />
                     </div>
-
-                    <button class="btn btn-sm" onClick={null}>Add</button>
+                    <div>
+                       <AddPerson></AddPerson>
+                    </div>
+                    
+                    {/* <button class="btn btn-sm" onClick={null}>Add</button>
                     <button class="btn btn-sm" onClick={null}>Update</button>
                     <button class="btn btn-sm" onClick={null}>Delete</button>
-                
+                 */}
                 </ul>
   
                 <div className="rightNav">
