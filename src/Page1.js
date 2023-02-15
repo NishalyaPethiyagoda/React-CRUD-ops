@@ -13,11 +13,11 @@ export const PageComponents1 = () => {
         setDataArray([...dataArray, newEntry]);
     }
 
-    // const handleDelete =(dataArray) =>{
-    //     setDataArray([...dataArray, dataArray])
-    // }
-
-    
+    const deleteEntry = (rowId) => {
+        const UpdatedDataAArray = dataArray.filter((entry)=>entry.userId !== rowId);
+        setDataArray(UpdatedDataAArray);
+        
+    }
 
     return (
         <div>
@@ -53,8 +53,7 @@ export const PageComponents1 = () => {
             {/* </section> */}
             
             <section className="section">
-                <DataTable array={dataArray} ></DataTable>
-                
+                <DataTable array1={dataArray} onDelete={deleteEntry}></DataTable>
             </section>
             
             <p className='text-big'></p>

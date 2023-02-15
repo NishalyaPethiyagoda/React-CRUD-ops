@@ -1,5 +1,6 @@
 
 import * as React from 'react';
+import UpdatePerson from './UpdatePerson'
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
 import TableCell from '@mui/material/TableCell';
@@ -10,17 +11,9 @@ import Paper from '@mui/material/Paper';
 import {Link, useNavigate} from 'react-router-dom'
 //import { array } from '../data/UserData';
 
-const DataTable = ({array} )=> {
+const DataTable = (props )=> {
     
-    // const onDelete = (rowId) => {
-
-    //     var index = array.map((e)=>{
-    //         return e.id
-        
-    //     }).indexOf(rowId) ;
-
-    //     array.splice(index, 1);
-    // }
+    
     
     
     return (
@@ -37,9 +30,9 @@ const DataTable = ({array} )=> {
           </TableHead>
           <TableBody>
             {
-                array && array.length >0
+                props.array1 && props.array1.length >0
                 ?
-                    array.map((eachRow) => (
+                props.array1.map((eachRow) => (
                 
                     <TableRow key={eachRow.userId}>
 
@@ -48,10 +41,10 @@ const DataTable = ({array} )=> {
                     <TableCell align="left">{eachRow.name}</TableCell>
                     <TableCell align="left">{eachRow.occupation}</TableCell>
                     <TableCell>
-                        <Button className="btn " onClick={() => {} }>Update</Button>
+                        <Button className="btn " onClick={()=> {}}>Update</Button>
                     </TableCell>
                     <TableCell>
-                    <Button className="btn " onClick={() => {}}>Delete</Button>
+                    <Button className="btn " onClick={() =>props.onDelete(eachRow.userId) }>Delete</Button>
                     </TableCell>
                     </TableRow>
                     ))
