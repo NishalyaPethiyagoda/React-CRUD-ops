@@ -111,22 +111,24 @@ font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 .btn {
-margin-left: 30px;
+margin-left: 20px;
 height: 46px;
 width: 150px;
 	color: #fff;
-background-color: #000000;
+	background-color: #000000;
 	cursor: pointer;
 }
 
 .btn-sm {
-	padding: 6px 10px;
+	margin-left: 10;
+	padding: 10px 10px;
 	vertical-align: middle;
 }
 
 .section {
-	Height:80px;
-	/* padding: 10px; */
+	min-height:200px;
+	padding: 10px;
+	padding-top: 50px;
 	display: block;
 	align-items: center;
 	background-color: rgb(250, 250, 250);

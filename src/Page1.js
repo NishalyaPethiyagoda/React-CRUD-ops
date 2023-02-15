@@ -13,6 +13,12 @@ export const PageComponents1 = () => {
         setDataArray([...dataArray, newEntry]);
     }
 
+    // const handleDelete =(dataArray) =>{
+    //     setDataArray([...dataArray, dataArray])
+    // }
+
+    
+
     return (
         <div>
             <nav className="navbar background">
@@ -35,7 +41,7 @@ export const PageComponents1 = () => {
                 </div>
             </nav>
   
-            <section className="section">
+            {/* <section className="section"> */}
                 <div>
                     <div className="firstHalf">
                         <h1 className="text-big">
@@ -44,10 +50,10 @@ export const PageComponents1 = () => {
                         
                     </div>
                 </div>
-            </section>
+            {/* </section> */}
             
             <section className="section">
-                <DataTable array={dataArray}></DataTable>
+                <DataTable array={dataArray} ></DataTable>
                 
             </section>
             
